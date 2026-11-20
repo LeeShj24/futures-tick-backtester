@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "futures-tick-backtester"
+version = "0.1.0"
+description = "Honest, event-driven tick-level backtesting engine for CME futures (NQ, ES, MNQ, MES)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "futures-tick-backtester contributors" }]
+keywords = ["backtesting", "futures", "CME", "tick data", "databento", "trading"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "pyarrow>=12",
+    "pyyaml>=6.0",
+    "tzdata; platform_system == 'Windows'",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+dev = [
+    "matplotlib>=3.7",
+    "pytest>=7.4",
+    "ruff>=0.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/futures-tick-backtester"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ftb"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests", "examples"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["ftb"]

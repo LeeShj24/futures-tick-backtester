@@ -1,0 +1,50 @@
+# Default contract specifications for CME equity-index futures.
+#
+# All fees are USD, per contract, PER SIDE (a round turn costs 2x).
+# The numbers below are ILLUSTRATIVE retail values. Exchange fees change and
+# brokers differ: copy this file, put in the numbers from your own statement,
+# and load it with `ftb.load_contracts("my_contracts.yaml")`.
+#
+#   exchange   : CME Globex exchange + clearing fee (non-member)
+#   broker     : broker commission
+#   regulatory : NFA regulatory fee
+contracts:
+  ES:
+    description: E-mini S&P 500
+    exchange: CME
+    tick_size: 0.25
+    point_value: 50.0
+    fees:
+      exchange: 1.38
+      broker: 0.50
+      regulatory: 0.02
+
+  NQ:
+    description: E-mini Nasdaq-100
+    exchange: CME
+    tick_size: 0.25
+    point_value: 20.0
+    fees:
+      exchange: 1.38
+      broker: 0.50
+      regulatory: 0.02
+
+  MES:
+    description: Micro E-mini S&P 500
+    exchange: CME
+    tick_size: 0.25
+    point_value: 5.0
+    fees:
+      exchange: 0.35
+      broker: 0.25
+      regulatory: 0.02
+
+  MNQ:
+    description: Micro E-mini Nasdaq-100
+    exchange: CME
+    tick_size: 0.25
+    point_value: 2.0
+    fees:
+      exchange: 0.35
+      broker: 0.25
+      regulatory: 0.02

@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Market data never belongs in the repo (licensing + size)
+/data/
+*.dbn
+*.dbn.zst
+*.parquet
+*.csv
+*.csv.gz
+*.csv.zst
+
+# Example outputs
+examples/output/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
