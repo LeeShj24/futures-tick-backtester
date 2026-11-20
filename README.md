@@ -30,7 +30,7 @@ assumptions explicit, configurable, and conservative by default.
 Requires Python 3.10+.
 
 ```bash
-git clone https://github.com/your-org/futures-tick-backtester.git
+git clone https://github.com/LeeShj24/futures-tick-backtester.git
 ```
 
 ```bash

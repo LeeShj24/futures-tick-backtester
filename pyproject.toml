@@ -39,7 +39,7 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-org/futures-tick-backtester"
+Homepage = "https://github.com/LeeShj24/futures-tick-backtester"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ftb"]
